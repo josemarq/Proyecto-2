@@ -1,364 +1,218 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#263238"
-    android:orientation="vertical">
+    android:layout_height="fill_parent"
+    android:fillViewport="true">
 
-
-    <LinearLayout
-        android:id="@+id/panel_scores"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:background="@color/myPrimaryColor"
-        android:orientation="horizontal">
-
-
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:paddingBottom="16dp"
-                android:paddingTop="16dp"
-                android:text="Visitor"
-                android:textColor="#FF5252"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/team_a_score"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="36dp"
-                android:fontFamily="sans-serif-light"
-                android:gravity="center"
-                android:paddingBottom="0dp"
-                android:text="0"
-                android:textColor="@color/myTextPrimaryColor"
-                android:textSize="56sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/resta_run_a"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_below="@+id/textView"
-                android:layout_marginLeft="16dp"
-                android:onClick="restOneForTeamA"
-                android:text="-" />
-
-            <Button
-                android:id="@+id/suma_run_a"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/resta_run_a"
-                android:layout_alignBottom="@+id/resta_run_a"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="16dp"
-                android:onClick="addOneForTeamA"
-                android:text="+" />
-
-        </RelativeLayout>
-
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0"
-            android:orientation="vertical">
-
-            <View
-                android:layout_width="1dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
-                android:background="@android:color/white" />
-        </LinearLayout>
-
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-
-            <TextView
-                android:id="@+id/textViewB"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:paddingBottom="16dp"
-                android:paddingTop="16dp"
-                android:text="Home Club"
-                android:textColor="#448AFF"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/team_b_score"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="36dp"
-                android:fontFamily="sans-serif-light"
-                android:gravity="center"
-                android:paddingBottom="0dp"
-
-                android:text="0"
-                android:textColor="@color/myTextPrimaryColor"
-                android:textSize="56sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/resta_run_b"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_below="@+id/textViewB"
-                android:layout_marginLeft="16dp"
-                android:onClick="restOneForTeamB"
-                android:text="-" />
-
-            <Button
-                android:id="@+id/suma_run_b"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/resta_run_b"
-                android:layout_alignBottom="@+id/resta_run_b"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="16dp"
-                android:onClick="addOneForTeamB"
-                android:text="+" />
-        </RelativeLayout>
-
-    </LinearLayout>
-
-
-    <View
-        android:id="@+id/view"
-        android:layout_width="wrap_content"
-        android:layout_height="1dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/panel_scores"
-        android:background="@android:color/white" />
-
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/view"
-        android:layout_marginBottom="65dp"
-        android:layout_weight="0"
-
-        android:background="@drawable/grass"
+        android:background="#263238"
         android:orientation="vertical">
 
-
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
+        <LinearLayout
+            android:id="@+id/panel_scores"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:background="@color/myPrimaryColor"
+            android:orientation="horizontal">
 
-
-            <TextView
-                android:id="@+id/textViewOuts"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:paddingBottom="12dp"
-                android:paddingTop="16dp"
-                android:text="Outs"
-                android:textColor="@color/myTextPrimaryColor"
-                android:textSize="20sp" />
+                android:layout_weight="1">
 
-            <TextView
-                android:id="@+id/team_outs"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/textView"
+                    style="@style/Teams"
+                    android:text="@string/visitor"
+                    android:textColor="#FF5252" />
+
+                <TextView
+                    android:id="@+id/team_a_score"
+                    style="@style/Scores" />
+
+                <Button
+                    android:id="@+id/resta_run_a"
+                    style="@style/ButtonsMinus"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/textView"
+                    android:layout_marginLeft="16dp"
+                    android:onClick="restOneForTeamA" />
+
+                <Button
+                    android:id="@+id/suma_run_a"
+                    style="@style/ButtonsPlus"
+                    android:layout_alignBaseline="@+id/resta_run_a"
+                    android:layout_alignBottom="@+id/resta_run_a"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="16dp"
+                    android:onClick="addOneForTeamA" />
+
+            </RelativeLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:orientation="vertical">
+
+                <View style="@style/ViewVertical" />
+            </LinearLayout>
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/textViewOuts"
-                android:layout_centerHorizontal="true"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
+                android:layout_weight="1">
 
-                android:text="0"
-                android:textColor="@color/myTextPrimaryColor"
-                android:textSize="50sp" />
+                <TextView
+                    android:id="@+id/textViewB"
+                    style="@style/Teams"
+                    android:text="@string/home"
+                    android:textColor="#448AFF" />
 
-            <Button
-                android:id="@+id/resta_outs"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/team_outs"
-                android:layout_below="@id/textViewOuts"
-                android:layout_marginRight="16dp"
-                android:layout_toLeftOf="@id/team_outs"
-                android:onClick="restOneOut"
-                android:text="-" />
+                <TextView
+                    android:id="@+id/team_b_score"
+                    style="@style/Scores" />
 
-            <Button
-                android:id="@+id/suma_outs"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/team_outs"
-                android:layout_below="@id/textViewOuts"
-                android:layout_marginLeft="16dp"
-                android:layout_toRightOf="@id/team_outs"
-                android:onClick="addOneOut"
-                android:text="+" />
+                <Button
+                    android:id="@+id/resta_run_b"
+                    style="@style/ButtonsMinus"
+                    android:layout_below="@+id/textViewB"
+                    android:layout_marginLeft="16dp"
+                    android:onClick="restOneForTeamB" />
 
+                <Button
+                    android:id="@+id/suma_run_b"
+                    style="@style/ButtonsPlus"
+                    android:layout_alignBaseline="@+id/resta_run_b"
+                    android:layout_alignBottom="@+id/resta_run_b"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="16dp"
+                    android:onClick="addOneForTeamB" />
+            </RelativeLayout>
 
-        </RelativeLayout>
+        </LinearLayout>
 
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
+        <View
+            android:id="@+id/view"
+            style="@style/ViewHorizontal"
+            android:layout_below="@+id/panel_scores" />
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_below="@id/view"
+            android:layout_marginBottom="65dp"
+            android:layout_weight="0"
+            android:background="@drawable/grass"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textViewStrikes"
-                android:layout_width="wrap_content"
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:paddingBottom="12dp"
-                android:paddingTop="16dp"
-                android:text="Strikes"
-                android:textColor="@color/myTextPrimaryColor"
-                android:textSize="20sp" />
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/team_strikes"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/textViewOuts"
+                    style="@style/CountersTitle"
+                    android:text="@string/out" />
+
+                <TextView
+                    android:id="@+id/team_outs"
+                    style="@style/Counters"
+                    android:layout_below="@id/textViewOuts" />
+
+                <Button
+                    android:id="@+id/resta_outs"
+                    style="@style/ButtonsMinus"
+                    android:layout_alignBottom="@id/team_outs"
+                    android:layout_below="@id/textViewOuts"
+                    android:layout_toLeftOf="@id/team_outs"
+                    android:onClick="restOneOut" />
+
+                <Button
+                    android:id="@+id/suma_outs"
+                    style="@style/ButtonsPlus"
+                    android:layout_alignBottom="@id/team_outs"
+                    android:layout_below="@id/textViewOuts"
+                    android:layout_toRightOf="@id/team_outs"
+                    android:onClick="addOneOut" />
+
+            </RelativeLayout>
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/textViewStrikes"
-                android:layout_centerHorizontal="true"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:text="0"
-                android:textColor="@color/myTextPrimaryColor"
-                android:textSize="50sp" />
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-            <Button
-                android:id="@+id/resta_strikes"
-                android:layout_width="50dp"
+                <TextView
+                    android:id="@+id/textViewStrikes"
+                    style="@style/CountersTitle"
+                    android:text="@string/strikes" />
+
+                <TextView
+                    android:id="@+id/team_strikes"
+                    style="@style/Counters"
+                    android:layout_below="@id/textViewStrikes" />
+
+                <Button
+                    android:id="@+id/resta_strikes"
+                    style="@style/ButtonsMinus"
+                    android:layout_alignBottom="@id/team_strikes"
+                    android:layout_below="@id/textViewStrikes"
+                    android:layout_toLeftOf="@id/team_strikes"
+                    android:onClick="restOneStrike" />
+
+                <Button
+                    android:id="@+id/suma_strikes"
+                    style="@style/ButtonsPlus"
+                    android:layout_alignBottom="@id/team_strikes"
+                    android:layout_below="@id/textViewStrikes"
+                    android:layout_toRightOf="@id/team_strikes"
+                    android:onClick="addOneStrike" />
+            </RelativeLayout>
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/team_strikes"
-                android:layout_below="@id/textViewStrikes"
-                android:layout_marginRight="16dp"
-                android:layout_toLeftOf="@id/team_strikes"
-                android:onClick="restOneStrike"
-                android:text="-" />
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-            <Button
-                android:id="@+id/suma_strikes"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/team_strikes"
-                android:layout_below="@id/textViewStrikes"
-                android:layout_marginLeft="16dp"
-                android:layout_toRightOf="@id/team_strikes"
-                android:onClick="addOneStrike"
-                android:text="+" />
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/textViewBalls"
+                    style="@style/CountersTitle"
+                    android:text="@string/balls" />
 
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+                <TextView
+                    android:id="@+id/team_balls"
+                    style="@style/Counters"
+                    android:layout_below="@id/textViewBalls" />
 
-            <TextView
-                android:id="@+id/textViewBalls"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:paddingBottom="16dp"
-                android:paddingTop="16dp"
-                android:text="Balls"
-                android:textColor="@color/myTextPrimaryColor"
-                android:textSize="20sp" />
+                <Button
+                    android:id="@+id/resta_balls"
+                    style="@style/ButtonsMinus"
+                    android:layout_alignBottom="@id/team_balls"
+                    android:layout_below="@id/textViewBalls"
+                    android:layout_toLeftOf="@id/team_balls"
+                    android:onClick="restOneBall" />
 
-            <TextView
-                android:id="@+id/team_balls"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/textViewBalls"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="16dp"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:text="0"
-                android:textColor="@color/myTextPrimaryColor"
-                android:textSize="50sp" />
+                <Button
+                    android:id="@+id/suma_balls"
+                    style="@style/ButtonsPlus"
+                    android:layout_alignBottom="@id/team_balls"
+                    android:layout_below="@id/textViewBalls"
+                    android:layout_toRightOf="@id/team_balls"
+                    android:onClick="addOneBall" />
+            </RelativeLayout>
 
-            <Button
-                android:id="@+id/resta_balls"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/team_balls"
-                android:layout_below="@id/textViewBalls"
-                android:layout_marginRight="16dp"
-                android:layout_toLeftOf="@id/team_balls"
-                android:onClick="restOneBall"
-                android:text="-" />
+        </LinearLayout>
 
-            <Button
-                android:id="@+id/suma_balls"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/team_balls"
-                android:layout_below="@id/textViewBalls"
-                android:layout_marginLeft="16dp"
-                android:layout_toRightOf="@id/team_balls"
-                android:onClick="addOneBall"
-                android:text="+" />
-        </RelativeLayout>
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/reset"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"
-        android:onClick="reset"
-        android:text="Reset" />
-</RelativeLayout>
+        <Button
+            android:id="@+id/reset"
+            style="@style/ResetButton"
+            android:onClick="reset"
+            android:text="@string/reset" />
+    </RelativeLayout>
+</ScrollView>

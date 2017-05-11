@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Baseball Score App</string>
+
+    <string name="visitor">Visitor</string>
+    <string name="home">Home Club</string>
+
+    <string name="out">Outs</string>
+    <string name="balls">Balls</string>
+    <string name="strikes">Strikes</string>
+
+    <string name="reset">Reset</string>
+
+    <string name="inning_change">Inning has finish - Resetting Values</string>
+    <string name="ball4">Ball 4, Batter going to 1st Base</string>
+    <string name="strike3">Strike 3, Batter is Out</string>
+
 </resources>

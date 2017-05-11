@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         balls=0;
         if (outs>2) {
             Toast.makeText(MainActivity.this,
-                    "Inning has finish - Resetting Values", Toast.LENGTH_SHORT).show();
+                    R.string.inning_change, Toast.LENGTH_SHORT).show();
             outs=3;
             Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
@@ -109,13 +109,13 @@ public class MainActivity extends AppCompatActivity {
         strikes = strikes +1;
         if (strikes>2) {
             Toast.makeText(MainActivity.this,
-                    "Strike 3, Batter is Out", Toast.LENGTH_SHORT).show();
+                    R.string.strike3, Toast.LENGTH_SHORT).show();
             outs=outs+1;
             balls=0;
             strikes=0;
             if (outs>2) {
                 Toast.makeText(MainActivity.this,
-                        "Inning has finish - Resetting Values", Toast.LENGTH_SHORT).show();
+                        R.string.inning_change, Toast.LENGTH_SHORT).show();
                 outs=3;
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
                         displayForStrikes(strikes);
                     }
 
-                }, 5000); // 5000ms delay
+                }, 4000); // 4000ms delay
             }
             displayForOuts(outs);
             displayForBalls(balls);
@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
         balls = balls +1;
         if (balls==4) {
             Toast.makeText(MainActivity.this,
-                    "Ball 4, Batter going to 1st Base", Toast.LENGTH_SHORT).show();
+                    R.string.ball4, Toast.LENGTH_SHORT).show();
 
             strikes=0;
             balls=0;
